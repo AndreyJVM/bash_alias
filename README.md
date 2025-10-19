@@ -1,81 +1,106 @@
+# Awesome-Bash-Alias
+A curated list of awesome Bash aliases.
+
+
+__#About__
+awesome-bash-alias is a curated collection of useful Bash aliases and functions designed to make your terminal workflow faster, easier, and more productive. It includes shortcuts for file management, Git, Docker, Kubernetes, networking, system monitoring, and more. Perfect for developers, sysadmins, DevOps engineers, and Linux/macOS enthusiasts.
+
+💡 Features:
+
+✅ Simplified navigation with directory shortcuts
+
+✅ Docker & Kubernetes command aliases for faster container management
+
+✅ Git shortcuts for commits, branches, pushes, and logs
+
+✅ Quick access to system info, memory/cpu stats, and disk usage
+
+✅ Network and ping tools for troubleshooting
+
+✅ Safe file operations and confirmation prompts
+
+🌟 Make your terminal smarter, faster, and more efficient!
+
+Website: https://vikaskyadav.github.io/awesome-bash-alias/
+
 __# 🧮 Calculator__
-alias bc="bc -l"
+* alias bc="bc -l"
 
 __# 🧹 Clear__
-alias c="clear"
-alias cl="clear"
-alias ckear="clear"
-alias clr="clear"
+* alias c="clear"
+* alias cl="clear"
+* alias ckear="clear"
+* alias clr="clear"
 
 __# 📂 Change Directories__
-alias .="cd .."
-alias ..="cd ../.."
-alias ...="cd ../../.."
-alias ....="cd ../../../.."
-alias .....="cd ../../../../.."
+* alias .="cd .."
+* alias ..="cd ../.."
+* alias ...="cd ../../.."
+* alias ....="cd ../../../.."
+* alias .....="cd ../../../../.."
 
 ### OR
 
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
+* alias ..="cd .."
+* alias ...="cd ../.."
+* alias ....="cd ../../.."
+* alias .....="cd ../../../.."
+* alias ......="cd ../../../../.."
 
-alias .1="cd .."
-alias .2="cd ../.."
-alias .3="cd ../../.."
-alias .4="cd ../../../.."
-alias .5="cd ../../../../.."
+* alias .1="cd .."
+* alias .2="cd ../.."
+* alias .3="cd ../../.."
+* alias .4="cd ../../../.."
+* alias .5="cd ../../../../.."
 
-alias ..1="cd .."
-alias ..2="cd ../.."
-alias ..3="cd ../../.."
-alias ..4="cd ../../../.."
-alias ..5="cd ../../../../.."
+* alias ..1="cd .."
+* alias ..2="cd ../.."
+* alias ..3="cd ../../.."
+* alias ..4="cd ../../../.."
+* alias ..5="cd ../../../../.."
 
-alias cd..="cd .."
-alias cd...="cd ../.."
-alias cd....="cd ../../.."
-alias cd.....="cd ../../../.."
-alias cd......="cd ../../../../.."
+* alias cd..="cd .."
+* alias cd...="cd ../.."
+* alias cd....="cd ../../.."
+* alias cd.....="cd ../../../.."
+* alias cd......="cd ../../../../.."
 
-alias cd1="cd .."
-alias cd2="cd ../.."
-alias cd3="cd ../../.."
-alias cd4="cd ../../../.."
-alias cd5="cd ../../../../.."
+* alias cd1="cd .."
+* alias cd2="cd ../.."
+* alias cd3="cd ../../.."
+* alias cd4="cd ../../../.."
+* alias cd5="cd ../../../../.."
 
 __# 📦 Package Management__
 
-alias update="sudo apt update && sudo apt upgrade -y"
-alias remove="sudo apt remove"
-alias yum-update="sudo yum update -y"
+* alias update="sudo apt update && sudo apt upgrade -y"
+* alias remove="sudo apt remove"
+* alias yum-update="sudo yum update -y"
 
 __# 🐳 Useful Docker functions__
 
-alias dl="sudo docker ps -l -q"
-alias dps="sudo docker ps"
-alias di="sudo docker images"
-alias dip="sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
-alias dkd="sudo docker run -d -P"
-alias dki="sudo docker run -i -t -P"
-alias dex="sudo docker exec -i -t"
-alias dstop="docker stop \$(docker ps -q)"        # stop all
-alias drm="docker rm \$(docker ps -a -q)"         # remove all containers
-alias dclean="docker system prune -af"            # clean system
-alias dlog="docker logs -f"                       # follow logs
-alias drmf='sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q)'
-alias dock-run()  { sudo docker run -i -t --privileged $@ ;}
-alias dock-exec() { sudo docker exec -i -t $@ /bin/bash ;}
-alias dock-log()  { sudo docker logs --tail=all -f $@ ;}
-alias dock-port() { sudo docker port $@ ;}
-alias dock-vol()  { sudo docker inspect --format '{{ .Volumes }}' $@ ;}
-alias dock-ip()   { sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}' $@ ;}
-alias dock-rmc()  { sudo docker rm `sudo docker ps -qa --filter 'status=exited'` ;}
-alias dock-rmi()  { sudo docker rmi -f `sudo docker images | grep '^<none>' | awk '{print $3}'` ;}
-alias dock-stop() { sudo docker stop $(docker ps -a -q); }
-alias dock-rm()   { sudo docker rm $(docker ps -a -q); }
+* alias dl="sudo docker ps -l -q"
+* alias dps="sudo docker ps"
+* alias di="sudo docker images"
+* alias dip="sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+* alias dkd="sudo docker run -d -P"
+* alias dki="sudo docker run -i -t -P"
+* alias dex="sudo docker exec -i -t"
+* alias dstop="docker stop \$(docker ps -q)"        # stop all
+* alias drm="docker rm \$(docker ps -a -q)"         # remove all containers
+* alias dclean="docker system prune -af"            # clean system
+* alias dlog="docker logs -f"                       # follow logs
+* alias drmf='sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q)'
+* alias dock-run()  { sudo docker run -i -t --privileged $@ ;}
+* alias dock-exec() { sudo docker exec -i -t $@ /bin/bash ;}
+* alias dock-log()  { sudo docker logs --tail=all -f $@ ;}
+* alias dock-port() { sudo docker port $@ ;}
+* alias dock-vol()  { sudo docker inspect --format '{{ .Volumes }}' $@ ;}
+* alias dock-ip()   { sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}' $@ ;}
+* alias dock-rmc()  { sudo docker rm `sudo docker ps -qa --filter 'status=exited'` ;}
+* alias dock-rmi()  { sudo docker rmi -f `sudo docker images | grep '^<none>' | awk '{print $3}'` ;}
+* alias dock-stop() { sudo docker stop $(docker ps -a -q); }
+* alias dock-rm()   { sudo docker rm $(docker ps -a -q); }
 
 * alias dock-do() {
    if [ "$#" -ne 1 ]; then
