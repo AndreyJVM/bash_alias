@@ -1,1 +1,6 @@
-
+* alias dl="sudo docker ps -l -q"
+* alias dps="sudo docker ps"
+* alias di="sudo docker images"
+* alias dip="sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+* alias dkd="sudo docker run -d -P"
+* alias dki="sudo docker run -i -t -P"
